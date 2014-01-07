@@ -240,6 +240,7 @@
     <Content Include="dbLocale.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\action_icon.png" />
     <Resource Include="images\homeButton.png" />
   </ItemGroup>
   <ItemGroup />

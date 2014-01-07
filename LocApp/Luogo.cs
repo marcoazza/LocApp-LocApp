@@ -61,7 +61,7 @@ namespace LocApp
         /// <summary>
         /// get from database the places already saved
         /// </summary>
-        /// <returns></returns>
+        /// <returns> return ArrayList containing stored places </returns>
         public static ArrayList getPossibiliLuoghi()
         {
             ArrayList luoghi= new ArrayList();
@@ -123,6 +123,9 @@ namespace LocApp
 
         }
 
+        /// <summary>
+        /// store place to database
+        /// </summary>
         public void luogoToDB()
         {
 
@@ -236,6 +239,10 @@ namespace LocApp
 
         }
 
+        /// <summary>
+        /// remove place and related networks
+        /// </summary>
+        /// <param name="luogo"> place to remove </param>
         public static void removeLuogoFromDB(string luogo)
         {
             ArrayList luoghi = new ArrayList();
@@ -296,6 +303,10 @@ namespace LocApp
             return;
         }
 
+        /// <summary>
+        /// check if a place is already present into database
+        /// </summary>
+        /// <returns> return true  if present, false otherwise </returns>
         public bool check(){
             SqlCeConnection sc = DBconnection.getDBConnection();
             sc.Open();

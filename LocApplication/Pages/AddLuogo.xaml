@@ -35,7 +35,7 @@
         </ListBox>
         <Label Content="Azioni nel luogo" HorizontalAlignment="Left" Margin="438,179,0,0" VerticalAlignment="Top" Width="127" Height="30"/>
         <Button x:Name="AggiungiAzioneButton" Content=">>" HorizontalAlignment="Left" Margin="340,226,0,0" VerticalAlignment="Top" Width="30" Height="30" RenderTransformOrigin="0.477,0.039" Click="AggiungiAzioneButton_Click"/>
-        <Button Content=" - " HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Margin="438,323,0,0" Height="30" RenderTransformOrigin="0.4,1.9"/>
+        <Button x:Name="Remove" Content=" - " HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Margin="438,323,0,0" Height="30" RenderTransformOrigin="0.4,1.9" Click="Remove_Click"/>
         <Button x:Name="AddCustomAction" Content="Aggiungi azione personalizzata" HorizontalAlignment="Left" Margin="26,342,0,0" VerticalAlignment="Top" Width="175" Click="AddCustomAction_Click"/>
         <Button x:Name="AggiungiLuogoButton" Content="Aggiungi" HorizontalAlignment="Left" Margin="164,395,0,0" VerticalAlignment="Top" Width="99" Height="45" Click="AggiungiLuogoButton_Click"/>
         <Label Content="Nome " HorizontalAlignment="Left" Margin="26,143,0,0" VerticalAlignment="Top" Width="60"/>

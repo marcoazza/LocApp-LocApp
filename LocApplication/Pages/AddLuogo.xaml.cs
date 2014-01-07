@@ -24,9 +24,6 @@ namespace LocApplication
         public AddLuogo()
         {
             InitializeComponent();
-            //load default actions
-            //if(ListaAzioniLuogo.Items.IsEmpty)
-            //Class1.getInstalledSoftware(this.ListaAzioniPredefinite);
             ThreadPool.QueueUserWorkItem(Class1.getInstalledSoftware, this.ListaAzioniPredefinite);
             
         }
@@ -60,8 +57,17 @@ namespace LocApplication
             customAct.ShowDialog();
 
             if (customAct.DialogResult == true) {
-                MessageBox.Show(customAct.ActionPath.Text);
+                string s =  customAct.ActionPath.Text;
+                string n = System.IO.Path.GetFileNameWithoutExtension(s);
+                String icon = "\\images\\action_icon.png";
+                ListaAzioniLuogo.Items.Add(new Class1.itemApp { applicazione = s, icon=icon, name = n });
+                
             }
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            ListaAzioniLuogo.Items.Remove(ListaAzioniLuogo.SelectedItem);
         }
     }
 }
