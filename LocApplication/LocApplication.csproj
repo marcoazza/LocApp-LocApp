@@ -93,6 +93,13 @@
     <Compile Include="..\LocApp\NetworkList.cs">
       <Link>NetworkList.cs</Link>
     </Compile>
+    <Compile Include="CustomActionWindow.xaml.cs">
+      <DependentUpon>CustomActionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalAppDBDataSet.cs">
+      <DependentUpon>LocalAppDBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Pages\AddLuogo.xaml.cs">
       <DependentUpon>AddLuogo.xaml</DependentUpon>
     </Compile>
@@ -123,6 +130,10 @@
       <DependentUpon>WelcomeLuogo.xaml</DependentUpon>
     </Compile>
     <Compile Include="WlanApi.cs" />
+    <Page Include="CustomActionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddLuogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

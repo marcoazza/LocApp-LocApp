@@ -43,7 +43,7 @@ namespace LocApplication
         private void AggiungiLuogoButton_Click(object sender, RoutedEventArgs e)
         {
             String nome = (String) NomeLuogo.Text;
-            if (nome == null || nome!="")
+            if (nome == null || nome=="")
             {
                 MessageBox.Show("Nome luogo obbligatorio!");
             }
@@ -51,6 +51,16 @@ namespace LocApplication
 
                 DBAccess.addNewLuogo(nome);
               
+            }
+        }
+
+        private void AddCustomAction_Click(object sender, RoutedEventArgs e)
+        {
+            CustomActionWindow customAct = new CustomActionWindow();
+            customAct.ShowDialog();
+
+            if (customAct.DialogResult == true) {
+                MessageBox.Show(customAct.ActionPath.Text);
             }
         }
     }
