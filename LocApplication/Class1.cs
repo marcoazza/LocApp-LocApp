@@ -90,13 +90,16 @@ namespace LocApplication
                                     myArray[0] = l;
                                     myArray[1] = sk.GetValue("");
                                     string rp = Environment.CurrentDirectory.ToString();
-
-                                    b.Save(rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico");
+                                    string completePath = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
+                                    
+                                    if(!System.IO.File.Exists(completePath)){
+                                        b.Save(completePath);
+                                    }
                                     myArray[2] = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
                                     myArray[3] = System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue(""));
 
                                     l.Dispatcher.BeginInvoke(new updateAppList(addItem), myArray);
-                                  
+                                   
                                 //Software += sk.GetValue("DisplayName") + " - " + sk.GetValue("InstallLocation") + "\n"; //Yes, here it is...
 
                                 

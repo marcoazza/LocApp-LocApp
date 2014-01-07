@@ -26,6 +26,7 @@ namespace LocApplication
             InitializeComponent();
             //load default actions
             //if(ListaAzioniLuogo.Items.IsEmpty)
+            //Class1.getInstalledSoftware(this.ListaAzioniPredefinite);
             ThreadPool.QueueUserWorkItem(Class1.getInstalledSoftware, this.ListaAzioniPredefinite);
             
         }

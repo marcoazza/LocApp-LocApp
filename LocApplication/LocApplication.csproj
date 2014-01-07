@@ -93,22 +93,22 @@
     <Compile Include="..\LocApp\NetworkList.cs">
       <Link>NetworkList.cs</Link>
     </Compile>
-    <Compile Include="AddLuogo.xaml.cs">
+    <Compile Include="Pages\AddLuogo.xaml.cs">
       <DependentUpon>AddLuogo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppList.xaml.cs">
+    <Compile Include="Pages\AppList.xaml.cs">
       <DependentUpon>AppList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Interface1.cs" />
-    <Compile Include="MenuLuogo.xaml.cs">
+    <Compile Include="Menu\MenuLuogo.xaml.cs">
       <DependentUpon>MenuLuogo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Menu\AggiungiLuogo.xaml.cs">
       <DependentUpon>AggiungiLuogo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menu\firstPage.xaml.cs">
-      <DependentUpon>firstPage.xaml</DependentUpon>
+    <Compile Include="Menu\menuClear.xaml.cs">
+      <DependentUpon>menuClear.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switcher.cs" />
     <Compile Include="DBAccess.cs" />
@@ -119,15 +119,15 @@
       <DependentUpon>LocalAppDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Triangolazione.cs" />
-    <Compile Include="WelcomeLuogo.xaml.cs">
+    <Compile Include="Pages\WelcomeLuogo.xaml.cs">
       <DependentUpon>WelcomeLuogo.xaml</DependentUpon>
     </Compile>
     <Compile Include="WlanApi.cs" />
-    <Page Include="AddLuogo.xaml">
+    <Page Include="Pages\AddLuogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AppList.xaml">
+    <Page Include="Pages\AppList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,7 +144,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MenuLuogo.xaml">
+    <Page Include="Menu\MenuLuogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,11 +152,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Menu\firstPage.xaml">
+    <Page Include="Menu\menuClear.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WelcomeLuogo.xaml">
+    <Page Include="Pages\WelcomeLuogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,10 +229,9 @@
     <Content Include="dbLocale.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\homeButton.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

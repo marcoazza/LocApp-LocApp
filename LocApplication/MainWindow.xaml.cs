@@ -44,7 +44,7 @@ namespace LocApplication
 
             _mainFrame.NavigationService.Navigate("Hello world");
             //_mainFrame.NavigationService.Navigate(new Uri("Menu/AggiungiLuogo.xaml", UriKind.Relative));
-            _mainFrame.NavigationService.Navigate(new Uri("AppList.xaml", UriKind.Relative));            
+            _mainFrame.NavigationService.Navigate(new Uri("Pages/AppList.xaml", UriKind.Relative));            
         }
 
 
@@ -57,7 +57,7 @@ namespace LocApplication
             string name4 = fe.Name;
             if (fe.Name == "AddLuogo")
             {
-                _mainFrame.NavigationService.Navigate(new Uri("AddLuogo.xaml", UriKind.Relative));
+                _mainFrame.NavigationService.Navigate(new Uri("Pages/AddLuogo.xaml", UriKind.Relative));
 
             }
             
@@ -66,13 +66,24 @@ namespace LocApplication
         private void Button_Click(object sender, RoutedEventArgs e)
         {
            //_mainFrame.NavigationService.Navigate(new Uri("AddLuogo.xaml", UriKind.Relative));
-            _mainFrame.NavigationService.Navigate(new Uri("WelcomeLuogo.xaml", UriKind.Relative));
-            _menuFrame.NavigationService.Navigate(new Uri("MenuLuogo.xaml", UriKind.Relative));
+            _mainFrame.NavigationService.Navigate(new Uri("Pages/WelcomeLuogo.xaml", UriKind.Relative));
+            _menuFrame.NavigationService.Navigate(new Uri("Menu/MenuLuogo.xaml", UriKind.Relative));
         }
 
         public void _mainFrame_Navigated(object sender, NavigationEventArgs e)
         {
 
+        }
+
+        private void Home(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            _mainFrame.NavigationService.Navigate(new Uri("Pages/AppList.xaml", UriKind.Relative));
+            _menuFrame.NavigationService.Navigate(new Uri("Menu/menuClear.xaml", UriKind.Relative));
         }
 
 
