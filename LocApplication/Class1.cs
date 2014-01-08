@@ -55,18 +55,19 @@ namespace LocApplication
         public delegate void updateAppList (System.Windows.Controls.ListBox l,string s,string ico,string n);
 
 
-
+        /// <summary>
+        /// get installed software reading local registry
+        /// </summary>
+        /// <param name="li"> list where item found will stored </param>
         public static void getInstalledSoftware(Object li)
         {
-            string Software = null;
-            //Dispatcher uiDispatcher = LocApplication.;
-            //AppList.handle.contr
+           
             System.Windows.Controls.ListBox l = (System.Windows.Controls.ListBox)li;
-            //int i = 0;
+            
             //The registry key:
             string SoftwareKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths";
             using (RegistryKey rk = Registry.LocalMachine.OpenSubKey(SoftwareKey))
-            //{
+           
                 //Let's go through the registry keys and get the info we need:
             
                 foreach (string skName in rk.GetSubKeyNames())
@@ -99,9 +100,6 @@ namespace LocApplication
                                     myArray[3] = System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue(""));
 
                                     l.Dispatcher.BeginInvoke(new updateAppList(addItem), myArray);
-                                   
-                                //Software += sk.GetValue("DisplayName") + " - " + sk.GetValue("InstallLocation") + "\n"; //Yes, here it is...
-
                                 
                             }
                         }
@@ -110,12 +108,8 @@ namespace LocApplication
                             //No, that exception is not getting away... :P
                         }
                     }
-                   //  i++;
                 }
             }
-
-
-
 
 
 
