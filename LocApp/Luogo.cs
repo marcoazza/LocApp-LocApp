@@ -112,7 +112,7 @@ namespace LocApp
 
                     LocalAppDBDataSet.SegnaleRow scr = (LocalAppDBDataSet.SegnaleRow)cr;
                     Network n =new Network();
-                    n.setNetwork(scr.mac,(uint)scr.potenza);
+                    n.setNetwork(scr.mac,(int)scr.potenza);
                     possibile.netwlist.Hash.Add(n.Mac, n);
                 }
 
@@ -208,7 +208,7 @@ namespace LocApp
                         LocalAppDBDataSet.SegnaleRow sr = lds.Segnale.NewSegnaleRow();
                         sr.mac = n.Mac;
                         sr.id_luogo = id;
-                        sr.potenza = (int)n.Potenza;
+                        sr.potenza = (int) n.Potenza;
                         lds.Segnale.Rows.Add(sr);
                     }
 

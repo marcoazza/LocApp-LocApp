@@ -28,15 +28,11 @@ namespace LocApplication
                 Distanza d2 = (Distanza)y;
 
                 return Comparer<double>.Default.Compare(d1.distanza, d2.distanza);
-                
-            
+             
             }
         
         
         }
-
-        
-
 
         public Triangolazione(Luogo l) {
             this.luogoDaTriangolare = l;
@@ -100,14 +96,15 @@ namespace LocApplication
                 foreach (DictionaryEntry dn in luogoDaTriangolare.NetwList.Hash)
                 {
                     Network n = (Network)dn.Value;
-                    uint potenzaVicino;
+                    double potenzaVicino;
+                    double pAtt;
 
                     if (l.NetwList.Hash[n.Mac] == null)
                         potenzaVicino = 0;
                     else
-                        potenzaVicino = l.NetwList[n.Mac].Potenza;
-
-                    d.distanza += Math.Pow(((double)potenzaVicino - (double)n.Potenza), 2);
+                        potenzaVicino = (double) Math.Pow(10.0, (l.NetwList[n.Mac].Potenza - 44) / (-22.0));
+                    pAtt = (double)Math.Pow(10.0, (n.Potenza - 44) / (-22.0));
+                    d.distanza += Math.Pow(((double)potenzaVicino - pAtt), 2);
 
                 }
                 d.distanza = Math.Sqrt(d.distanza);

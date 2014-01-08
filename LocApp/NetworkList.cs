@@ -34,7 +34,7 @@ namespace LocApp
                 foreach (Wlan.WlanBssEntry bssentry in bsss)
                 {
                     Network n= new Network();
-                    n.setNetwork( bssentry.getBssIdString(),bssentry.linkQuality);
+                    n.setNetwork( bssentry.getBssIdString(),bssentry.rssi);
                     
                     _hash.Add(n.Mac,n);
 

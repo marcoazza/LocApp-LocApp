@@ -9,7 +9,7 @@ namespace LocApp
     class Network
     {
         private string _mac;
-        private uint _potenza;
+        private int _potenza;
 
         public string Mac {
             get { return _mac; }
@@ -19,14 +19,14 @@ namespace LocApp
 
 
 
-        public uint Potenza
+        public int Potenza
         {
             get { return _potenza; }
             set { _potenza = value ; }
         }
 
 
-        public void setNetwork(string mac, uint potenza) { 
+        public void setNetwork(string mac, int potenza) { 
             _mac=mac;
             _potenza= potenza;
         }
