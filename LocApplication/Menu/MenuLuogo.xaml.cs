@@ -28,8 +28,20 @@ namespace LocApplication
         private void AddLuogo_Click(object sender, RoutedEventArgs e)
         {
             //sarà lo stack panel che si occuperà di capire che l'evento è stato sollevato
-            //da questo bottone (vedi HandleClick di MainWindows
+            //da questo bottone (vedi HandleClick di MainWindows)
           
+        }
+
+        private void DelLuogo_Click(object sender, RoutedEventArgs e)
+        {
+            //sarà lo stack panel che si occuperà di capire che l'evento è stato sollevato
+            //da questo bottone (vedi HandleClick di MainWindows)
+        }
+
+        private void ModLuogo_Click(object sender, RoutedEventArgs e)
+        {
+            //sarà lo stack panel che si occuperà di capire che l'evento è stato sollevato
+            //da questo bottone (vedi HandleClick di MainWindows)
         }
 
     }

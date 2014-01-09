@@ -118,6 +118,12 @@
     <Compile Include="Menu\menuClear.xaml.cs">
       <DependentUpon>menuClear.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DelLuogo.xaml.cs">
+      <DependentUpon>DelLuogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ModLuogo.xaml.cs">
+      <DependentUpon>ModLuogo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Switcher.cs" />
     <Compile Include="DBAccess.cs" />
     <Compile Include="DBconnection.cs" />
@@ -165,6 +171,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Menu\menuClear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DelLuogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ModLuogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

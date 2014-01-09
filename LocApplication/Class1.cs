@@ -103,6 +103,7 @@ namespace LocApplication
          
                                     }
                                 }
+
                                 myArray[2] = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
                                 myArray[3] = System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue(""));
 
