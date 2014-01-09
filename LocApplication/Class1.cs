@@ -61,9 +61,10 @@ namespace LocApplication
         /// <param name="li"> list where item found will stored </param>
         public static void getInstalledSoftware(Object li)
         {
-           
             System.Windows.Controls.ListBox l = (System.Windows.Controls.ListBox)li;
-            
+            string rp = Environment.CurrentDirectory.ToString();
+            System.IO.Directory.CreateDirectory(rp + "\\images\\");
+
             //The registry key:
             string SoftwareKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths";
             using (RegistryKey rk = Registry.LocalMachine.OpenSubKey(SoftwareKey))
@@ -82,24 +83,30 @@ namespace LocApplication
                             //If the key has value, continue, if not, skip it:
                             if (!(sk.GetValue("") == null))
                             {
-                                Icon ico = Icon.ExtractAssociatedIcon((string)sk.GetValue(""));
-                                
+                                Icon ico = Icon.ExtractAssociatedIcon((string)sk.GetValue("")); 
                                 Bitmap b = ico.ToBitmap();
-                                
-                                
-                                    object[] myArray = new object[4];
-                                    myArray[0] = l;
-                                    myArray[1] = sk.GetValue("");
-                                    string rp = Environment.CurrentDirectory.ToString();
-                                    string completePath = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
-                                    
-                                    if(!System.IO.File.Exists(completePath)){
+                                object[] myArray = new object[4];
+                                myArray[0] = l;
+                                myArray[1] = sk.GetValue("");
+                                string completePath = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
+                                Logger.log("sddas");
+
+                                if(!System.IO.File.Exists(completePath)){
+                                    try
+                                    {
                                         b.Save(completePath);
                                     }
-                                    myArray[2] = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
-                                    myArray[3] = System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue(""));
+                                    catch (Exception e)
+                                    {
+                                        Logger.log("sddas");
 
-                                    l.Dispatcher.BeginInvoke(new updateAppList(addItem), myArray);
+         
+                                    }
+                                }
+                                myArray[2] = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
+                                myArray[3] = System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue(""));
+
+                                l.Dispatcher.BeginInvoke(new updateAppList(addItem), myArray);
                                 
                             }
                         }
