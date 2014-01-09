@@ -50,7 +50,7 @@
                 <ImageBrush/>
             </StackPanel.Background>
             <Button Style="{DynamicResource ResourceKey=HomeBut}" Content="" Width="106" Click="Home_Click" Margin="10,0,0,29" BorderThickness="0" Height="105" VerticalAlignment="Bottom"/>
-            <Button Content="Gestisci Luoghi" Click="Button_Click" Width="240" Margin="10,0,0,10">
+            <Button x:Name="GestisciLuoghi" Content="Gestisci Luoghi" Click="GestisciLuoghi_Click" Width="240" Margin="10,0,0,10">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>

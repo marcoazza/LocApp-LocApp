@@ -86,7 +86,8 @@ namespace LocApplication
                                 
                                 Bitmap b = ico.ToBitmap();
                                 
-                                
+
+                                object s = sk.GetValue("Path");
                                     object[] myArray = new object[4];
                                     myArray[0] = l;
                                     myArray[1] = sk.GetValue("");
@@ -96,8 +97,9 @@ namespace LocApplication
                                     if(!System.IO.File.Exists(completePath)){
                                         b.Save(completePath);
                                     }
-                                    myArray[2] = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
-                                    myArray[3] = System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue(""));
+                                    
+                                myArray[2] = rp + "\\images\\" + System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue("")) + ".ico";
+                                myArray[3] = System.IO.Path.GetFileNameWithoutExtension((string)sk.GetValue(""));
 
                                     l.Dispatcher.BeginInvoke(new updateAppList(addItem), myArray);
                                 

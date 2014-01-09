@@ -54,28 +54,30 @@ namespace LocApplication
         {
             // Get the element that raised the event. 
             FrameworkElement fe = (FrameworkElement)args.OriginalSource;
-            string name4 = fe.Name;
-            if (fe.Name == "AddLuogo")
-            {
-                _mainFrame.NavigationService.Navigate(new Uri("Pages/AddLuogo.xaml", UriKind.Relative));
 
+            switch (fe.Name) { 
+                case "AddLuogo":
+                    _mainFrame.NavigationService.Navigate(new Uri("Pages/AddLuogo.xaml", UriKind.Relative));
+                    break;
+                case "DelLuogo":
+                    _mainFrame.NavigationService.Navigate(new Uri("Pages/DelLuogo.xaml", UriKind.Relative));
+                    break;
+                case "ModLuogo":
+                    _mainFrame.NavigationService.Navigate(new Uri("Pages/ModLuogo.xaml", UriKind.Relative));
+                    break;
+            
             }
+            
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GestisciLuoghi_Click(object sender, RoutedEventArgs e)
         {
-           //_mainFrame.NavigationService.Navigate(new Uri("AddLuogo.xaml", UriKind.Relative));
-            _mainFrame.NavigationService.Navigate(new Uri("Pages/WelcomeLuogo.xaml", UriKind.Relative));
+           _mainFrame.NavigationService.Navigate(new Uri("Pages/WelcomeLuogo.xaml", UriKind.Relative));
             _menuFrame.NavigationService.Navigate(new Uri("Menu/MenuLuogo.xaml", UriKind.Relative));
         }
 
         public void _mainFrame_Navigated(object sender, NavigationEventArgs e)
-        {
-
-        }
-
-        private void Home(object sender, RoutedEventArgs e)
         {
 
         }
